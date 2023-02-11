@@ -12,13 +12,37 @@ export const commands = [
                 type: ApplicationCommandOptionType.String,
             }
         ]
-    },{
+    }, {
+        name: `catsay`,
+        description: `catsay`,
+        options: [
+            {
+                name: `reason`,
+                description: `catsay`,
+                required: true,
+                type: ApplicationCommandOptionType.String,
+            }
+        ]
+
+    }, {
         name: `duma`,
         description: `You asked duma.`
-    },{
+    }, {
         name: `help`,
         description: `help from bot.`
-    },{
+    }, {
+        name: `pedofil`,
+        description: `pedofil from bot.`,
+        options: [
+            {
+                name: `mention`,
+                description: `mention from pedofil`,
+                type: 6,
+                required: true
+            }
+        ]
+
+    }, {
         name: `slap`,
         description: `slap mention`,
         options: [
@@ -29,7 +53,7 @@ export const commands = [
                 required: true
             }
         ]
-    },  {
+    }, {
         name: 'love',
         description: 'mention',
         options: [
@@ -41,42 +65,34 @@ export const commands = [
             }
         ]
     }, {
-        name: `addsheep`,
-        description: `add asked sheep a question`,
+        name: 'beer',
+        description: 'mention',
         options: [
             {
-                name: `reason`,
-                description: `add asked sheep a question`,
-                required: true,
-                type: ApplicationCommandOptionType.String
-            }
-        ]
-    }, {
-        name: `addben`,
-        description: `add asked Ben a question`,
-        options: [
-            {
-                name: `reason`,
-                description: `add asked ben a question (gifs/png/jpg)`,
-                required: true,
-                type: ApplicationCommandOptionType.String
-            },
-            {
-                name: `reason2`,
-                description: `add asked ben a question`,
-                required: true,
-                type: ApplicationCommandOptionType.String
+                name: `user`,
+                description: ` mention`,
+                type: 6,
+                required: true
             }
         ]
     }, {
         name: `tedi`,
         description: `tedi`,
+        options: [
+            {
+                name: `user`,
+                description: ` tedi`,
+                type: 6,
+                required: true
+            }
+        ]
+
     }, {
         name: 'cm',
         description: 'mention',
         options: [
             {
-                name: `useravatar`,
+                name: `mention`,
                 description: ` mention`,
                 type: 6,
                 required: true
@@ -85,16 +101,5 @@ export const commands = [
     }, {
         name: `botinfo`,
         description: `check from informations bot.`
-    },{
-        name: `addduma`,
-        description: `You asked duma a question`,
-        options: [
-            {
-                name: `reason`,
-                description: `You asked duma a question`,
-                required: true,
-                type: ApplicationCommandOptionType.String
-            }
-        ]
     }
 ]

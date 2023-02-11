@@ -1,2 +1,2 @@
-# Kitsune-bot
-kitsune-bot created by pericolrpg (special pt crazyemp.site/discord)
+#### KitSune-Bot created by pericsq_0 [click](https://youtube.com/@pericsq_0)
+ - [ ] :::: puterea dragostei
