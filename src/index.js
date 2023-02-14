@@ -196,7 +196,6 @@ discord_client.on('interactionCreate', async interaction => {
                 ],
                 components: [
                     new discord_bot.ActionRowBuilder()
-
                         .setComponents(
                             new discord_bot.ButtonBuilder()
                                 .setLabel(`Source code`)
