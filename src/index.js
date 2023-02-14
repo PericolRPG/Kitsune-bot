@@ -1,5 +1,12 @@
 /**
- * developed by pericolrpg (www.pericolrpg.site/leaks & www.pericolrpg.site/wz )
+ * @file index.js
+ * @description The main file of the bot.
+ * @author pericsq_0#7777
+ * @version 1.0.0
+ * @license MIT
+ * @requires discord.js
+ * @requires config/config.js
+ * @requires fs
  */
 
 import discord_bot from 'discord.js';
@@ -25,42 +32,12 @@ export const discord_client = new discord_bot.Client({
         status: 'dnd'
     }
 });
-/**
- * Random de dume/ben
- */
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
-/**s
- * *mysql*
- */
+
 var bendume = JSON.parse(fs.readFileSync('./src/mysql/ben.json'));
 var Dumes = JSON.parse(fs.readFileSync('./src/mysql/dume.json'));
-//var sheep = JSON.parse(fs.readFileSync('./src/mysql/sheep.json'));
-/**
- * commands (discord)
- */
-discord_client.commands = new discord_bot.Collection();
-/**
- * message create from discord.js
- * mention
- */
-/*discord_client.on('messageCreate',  msg => {
-    switch (msg?.mentions.users.first()) {
-        case discord_client.user: {
-            var random = getRndInteger(0, sheep.length);
-            msg?.reply({ content: `${sheep[random] ? `${sheep[random]}` : `Nu exista niciun sheep momentan`}` })
-            break;
-        }
-    }
-});
-*/
-//
-
-
-/**
- * slash commands - created by pericolrpg
- */
 discord_client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
     const
@@ -74,7 +51,7 @@ discord_client.on('interactionCreate', async interaction => {
                 ephemeral: true
             })
             break;
-        }
+        } dsads
         case 'catsay': {
             let reason = interaction.options.getString('reason');
             await interaction.reply({
@@ -95,6 +72,41 @@ discord_client.on('interactionCreate', async interaction => {
                 pedofil_nivel = pedofil < 20 ? 'nivel 20' : pedofil < 40 ? 'nivel 40' : pedofil < 60 ? 'nivel 60' : pedofil < 80 ? 'Aproape pedofil' : 'Pedofi Cu Experienta';
 
             await interaction.reply({ content: `**${user}** este pedofil de tip ${pedofil_nivel} - ${pedofil}%!` });
+            break;
+        }
+        case 'serverinfo': {
+            let guild = interaction?.guild;
+            await interaction?.reply({
+                embeds: [
+                    new discord_bot.EmbedBuilder()
+                        .setTitle(`**${guild.name}'s INFO**`)
+                        .setDescription(`**Server Name:** ${guild.name}\n**Server ID:** ${guild.id}\n**Server Owner:** ${guild.owner}\n**Server Members:** ${guild.memberCount}\n**Server Region:** ${guild.region}\n**Server Created At:** ${guild.createdAt}`)
+                        .setColor('White')
+                        .setTimestamp()
+                        .setFooter({
+                            text: `${interaction?.guild.name}`,
+                            iconURL: interaction?.user.displayAvatarURL({ dynamic: true })
+                        })
+                ]
+            })
+            break;
+        }
+        case 'userinfo':{
+            let userinfo = interaction?.options.getMember('mention');
+
+            await interaction?.reply({
+                embeds: [
+                    new discord_bot.EmbedBuilder()
+                        .setTitle(`**${userinfo.user.username}'s INFO**`)
+                        .setDescription(`**Username:** ${userinfo.user.username}\n**User ID:** ${userinfo.user.id}\n**User Tag:** ${userinfo.user.tag}\n**User Created At:** ${userinfo.user.createdAt}\n**User Avatar:** [Click Here](${userinfo.user.displayAvatarURL({ dynamic: true })})`)
+                        .setColor('White')
+                        .setTimestamp()
+                        .setFooter({
+                            text: `${interaction?.guild.name}`,
+                            iconURL: interaction?.user.displayAvatarURL({ dynamic: true })
+                        })
+                ]
+            })
             break;
         }
         case 'love': {
@@ -268,3 +280,9 @@ discord_client.login(config.token).then(
         console.log(`${discord_client.user.username} is ready!`)
     }
 )
+
+/**
+ * muie Fanel zis Developeru n JS
+ * 
+ * Respecta in pla mea 
+ */

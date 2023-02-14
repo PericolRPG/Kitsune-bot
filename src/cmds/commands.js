@@ -101,5 +101,19 @@ export const commands = [
     }, {
         name: `botinfo`,
         description: `check from informations bot.`
+    }, {
+        name: `serverinfo`,
+        description: `check from informations server.`
+    }, {
+        name: `userinfo`,
+        description: `check from informations user.`,
+        options: [
+            {
+                name: `mention`,
+                description: `mention from user`,
+                type: 6,
+                required: true
+            }
+        ]
     }
 ]
