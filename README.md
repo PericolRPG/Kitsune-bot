@@ -1,4 +1,3 @@
-#### KitSune-Bot created by pericsq_0 [click](https://youtube.com/@pericsq_0)
  # Slash Commands (In Only):
  - /help
  - /ben 
@@ -18,4 +17,12 @@
  - /removedume
 
 
- Bot For Fun 🥺❤️ 
+### Info:
+- Butu made at the caterinca when I was drunk
+- Source-i creator is pericsq_0
+
+### Contact: 
+- >> DISCORD: pericsq_0#6666 (www.easy-code.ro/discord & www.leaks.ro/discord - messages only)
+- >> MAIL: contact@pericolrpg.site
+
+### The bot is made for fun 🥺❤️ 
