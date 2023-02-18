@@ -271,6 +271,38 @@ discord_client.on('interactionCreate', async interaction => {
             })
             break;
         }
+        case 'removedume': {
+            if (!interaction?.member.permissions.has(discord_bot.PermissionFlagsBits.Administrator)) {
+                interaction?.reply({
+                    content: `${acces}`,
+                    ephemeral: true
+                })
+                break;
+            }
+            let reason = interaction?.options.getString('reason');
+            var dumanoua = reason;
+            Dumes.splice(dumanoua, 1);
+            var data = JSON.stringify(Dumes, null, 2);
+            fs.writeFile('./src/mysql/dume.json', data, finished);
+
+            function finished(err) {
+                return interaction.reply(err ? ({
+                    embeds: [
+                        new discord_bot.EmbedBuilder()
+                            .setColor('Red')
+                            .setDescription('Ceva nu a mers bine')
+                    ]
+                }) : ({
+                    embeds: [
+                        new discord_bot.EmbedBuilder()
+                            .setColor('Green')
+                            .setDescription('Duma stearsa cu succes!')
+                    ]
+                })),
+                    console.log(err ? ('something went wrong') : ('debug'));
+            }
+            break;
+        }
     }
 });
 
