@@ -115,5 +115,16 @@ export const commands = [
                 required: true
             }
         ]
+    }, {
+        name: 'removedume',
+        description: 'deleted from dume',
+        options: [
+            {
+                name: `reason`,
+                description: `reason from dume`,
+                type: 3,
+                required: true
+            }
+        ]
     }
 ]
