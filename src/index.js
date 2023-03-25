@@ -1,7 +1,7 @@
 /**
  * @file index.js
  * @description The main file of the bot.
- * @author pericsq_0#7777
+ * @author pericsq#6666
  * @version 1.0.0
  * @license MIT
  * @requires discord.js
@@ -32,7 +32,8 @@ export const discord_client = new discord_bot.Client({
         status: 'dnd'
     }
 });
-function getRndInteger(min, max) {
+function getRndInteger(min, max)
+{
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
@@ -57,7 +58,7 @@ discord_client.on('interactionCreate', async interaction => {
                 })
             }
             break;
-        } dsads
+        } 
         case 'catsay': {
             let reason = interaction.options.getString('reason');
             await interaction.reply({
@@ -146,8 +147,7 @@ discord_client.on('interactionCreate', async interaction => {
                 beer_nivel = Math.round(Math.random() * 100),
                 nevel = beer_nivel < 20 ? 'Putin beat' : beer_nivel < 40 ? 'luat in gat' : beer_nivel < 60 ? 'aproape mort' : beer_nivel ? 'Mort de beat' : 'mort in sant';
 
-            await interaction?.reply(
-                {
+            await interaction?.reply({
                     content: `**${user_beer}**  = __${beer_nivel}%__ of **${nevel}**`,
                 }
             )
@@ -320,7 +320,6 @@ discord_client.login(config.token).then(
 )
 
 /**
- * muie Fanel zis Developeru n JS
- * 
- * Respecta in pla mea 
+ * Develoged by pericsq#6666
+ *  For more info join my discord server: https://www.easy-code.ro/discord
  */

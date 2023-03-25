@@ -126,5 +126,16 @@ export const commands = [
                 required: true
             }
         ]
+    }, {
+        name: `addduma`,
+        description: `add from duma`,
+        options: [
+            {
+                name: `reason`,
+                description: `reason from duma`,
+                type: 3,
+                required: true
+            }
+        ]
     }
 ]
